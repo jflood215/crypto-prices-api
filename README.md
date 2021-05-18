@@ -1,3 +1,9 @@
+# Crypto Price Tracker
+
+This app was created out of my passion for decentralized finance and crypto currencies. As someone who's been interested in Bitcoin, blockchain, and many other similar innovations, it felt like time to create a project that can track the prices of popular currencies, and will hopefully evolve into a full stack application with many more fun and unique featrues.
+
+This is my first time creating anything with Next.js, so it was also an opportunity to learn new technology and continue building on my experience with React.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
