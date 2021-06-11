@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CryptoFetch from '../pages/CryptoFetch';
+import CryptoTable from '../pages/CryptoTable';
 import Footer from '../pages/Footer';
 import Navbar from '../pages/Navbar';
 
@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-        <CryptoFetch />
+        <CryptoTable />
         <Footer />
     </div>
   )
