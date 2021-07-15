@@ -4,17 +4,32 @@ import CryptoTable from '../pages/CryptoTable';
 import Footer from '../pages/Footer';
 import Navbar from '../pages/Navbar';
 
-export default function Home() {
-  return (
-    <div>
-      <Head>
-        <title>Cryptocurrency Prices</title>
-        <meta name="Cryptocurrency" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
-        <CryptoTable />
-        <Footer />
-    </div>
-  )
+const Home = ({ topCoins }) => {
+  return (  <div>
+    <Head>
+      <title>Cryptocurrency Prices</title>
+      <meta name="Cryptocurrency" />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Navbar />
+    <CryptoTable topCoins={topCoins} />
+      <Footer />
+  </div>
+)
 }
+   // This gets called on every request
+   export async function getServerSideProps() {
+    // Fetch data from external API
+    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h')
+
+    const data = await res.json()
+    // Pass data to the page via props
+    return { 
+        props: { 
+            topCoins
+        } ,
+    }
+  };
+ 
+export default Home;
+   
