@@ -9,6 +9,7 @@ import {
   NavLink
 } from 'reactstrap';
 import styles from '../styles/Navbar.module.css';
+import ModalButton from './Modal';
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,9 +23,10 @@ const Example = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            {/* <NavItem>
-              <NavLink className={styles.navbar} href="/components/">Components</NavLink>
-            </NavItem> */}
+            <NavItem>
+              <ModalButton />
+              {/* <NavLink className={styles.navbar} href="/modal/">Wealth</NavLink> */}
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
