@@ -18,9 +18,9 @@ const CryptoTable = ({ topCoins }) => {
       </tr>
     </thead>
     {topCoins.map(coin => {
-      const { name, image, current_price, market_cap, market_cap_rank, price_change_percentage_24h, total_volume } = coin
+      const { id, name, image, current_price, market_cap, market_cap_rank, price_change_percentage_24h, total_volume } = coin
       return (
-    <tbody>
+    <tbody key={id}>
       <tr>
         <th style={{paddingLeft: '1em'}} scope="row">{market_cap_rank}</th>
         <td><img className='image' src={image} alt={name} style={{ height: 20, width: 20}}/></td>
@@ -35,9 +35,13 @@ const CryptoTable = ({ topCoins }) => {
         
       </tr>
     </tbody>
+    
       )})
+      
     }
-  </Table> );
+  </Table>
+   );
+  
 }
  
 export default CryptoTable;

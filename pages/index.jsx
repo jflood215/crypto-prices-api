@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CryptoTable from '../pages/CryptoTable';
 import Footer from '../pages/Footer';
 import Navbar from '../pages/Navbar';
+import ModalButton from './Modal';
 
 const Home = ({ topCoins }) => {
   return (  <div>
@@ -11,7 +12,9 @@ const Home = ({ topCoins }) => {
       <meta name="Cryptocurrency" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Navbar />
+    <Navbar topCoins={topCoins}>
+    <ModalButton />
+    </Navbar>
     <CryptoTable topCoins={topCoins} />
       <Footer />
   </div>

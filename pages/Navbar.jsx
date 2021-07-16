@@ -11,7 +11,7 @@ import {
 import styles from '../styles/Navbar.module.css';
 import ModalButton from './Modal';
 
-const Example = (props) => {
+const NavBar = (topCoins) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -24,7 +24,8 @@ const Example = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <ModalButton />
+            <ModalButton topCoins={topCoins}/>
+            
               {/* <NavLink className={styles.navbar} href="/modal/">Wealth</NavLink> */}
             </NavItem>
           </Nav>
@@ -34,4 +35,4 @@ const Example = (props) => {
   );
 }
 
-export default Example;
+export default NavBar;

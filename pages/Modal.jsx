@@ -1,26 +1,40 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Form, FormGroup, Input, Label, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const ModalButton = (props) => {
+const ModalButton = (topCoins) => {
   const {
-    buttonLabel,
-    className
-  } = props;
-
+//     buttonLabel,
+//     className,
+    name,
+    current_price
+  } = topCoins;
+  
+console.log(topCoins);
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
 
   return (
     <div>
-      <Button style={{ width: 96, height: 32 }} color="dark" onClick={toggle}>Calculator</Button>
-      <Modal isOpen={modal} toggle={toggle} className={className}>
+      <Button color="light" onClick={toggle}>Calculator</Button>
+      <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Crypto Wealth Calculator</ModalHeader>
         <ModalBody>
         Have some crypto? Calculate how much it's worth $$$.
+        <Form inline>
+   <FormGroup>
+  <Label for="exampleNumber">{topCoins.name}</Label>
+  <Input
+    type="number"
+    name="number"
+    id="exampleNumber"
+    placeholder="Enter Amount"
+  />
+</FormGroup>
+</Form>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+          <Button color="primary" onClick={toggle}>Calculate</Button>{' '}
           <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
