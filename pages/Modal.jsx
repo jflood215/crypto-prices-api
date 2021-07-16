@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Input, Label, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { modalProps } from './Navbar'
 
-const ModalButton = (topCoins) => {
-  const {
+const ModalButton = () => {
+  // const {
 //     buttonLabel,
 //     className,
-    name,
-    current_price
-  } = topCoins;
+  //   name,
+  //   current_price
+  // } = topCoins;
   
-console.log(topCoins);
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
@@ -23,7 +23,7 @@ console.log(topCoins);
         Have some crypto? Calculate how much it's worth $$$.
         <Form inline>
    <FormGroup>
-  <Label for="exampleNumber">{topCoins.name}</Label>
+  <Label for="exampleNumber"></Label>
   <Input
     type="number"
     name="number"

@@ -11,10 +11,15 @@ import {
 import styles from '../styles/Navbar.module.css';
 import ModalButton from './Modal';
 
-const NavBar = (topCoins) => {
+const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  // const modalProps =  {
+  //   name: topCoins.name,
+  //   price: topCoins.current_price
+  // }
 
   return (
     <div>
@@ -24,7 +29,7 @@ const NavBar = (topCoins) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-            <ModalButton topCoins={topCoins}/>
+            {/* <ModalButton props={topCoins}/> */}
             
               {/* <NavLink className={styles.navbar} href="/modal/">Wealth</NavLink> */}
             </NavItem>
